@@ -10,7 +10,8 @@
 
 ## 3. Commit Message Convention
 - 모든 커밋 메시지는 **Conventional Commits** 명세를 따른다.
-- (예: `feat: Add author profile component`, `fix: Correct typo in footer`)
+- 커밋 메시지는 항상 **한국어**로 작성한다.
+- (예: `feat: 작성자 프로필 컴포넌트 추가`, `fix: 푸터 오타 수정`)
 - 커밋 본문에는 변경 이유를 명확히 서술하고, 관련된 GitHub 이슈를 `Closes #[이슈번호]` 형식으로 반드시 포함한다.
 - claude code와 관련된 내용은 들어가지 않는다. author에도 기재하지 않는다.
 
