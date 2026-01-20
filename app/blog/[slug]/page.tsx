@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { AuthorProfile } from 'app/components/AuthorProfile'
+import { LikeButton } from 'app/components/LikeButton'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 import { siteAuthor } from 'app/lib/author'
@@ -95,7 +96,10 @@ export default function Blog({ params }) {
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
-      <AuthorProfile />
+      <div className="mt-8 mb-4">
+        <LikeButton slug={post.slug} />
+      </div>
+      <AuthorProfile author={siteAuthor} />
     </section>
   )
 }
