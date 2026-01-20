@@ -19,6 +19,7 @@ function AuthorAvatar({ imageUrl, authorName, size = 64 }: AuthorAvatarProps) {
       width={size}
       height={size}
       className="rounded-full"
+      data-testid="author-avatar"
     />
   );
 }
@@ -31,10 +32,16 @@ interface AuthorDetailsProps {
 function AuthorDetails({ displayName, biography }: AuthorDetailsProps) {
   return (
     <div className="flex-1">
-      <p className="font-semibold text-neutral-900 dark:text-neutral-100">
+      <p
+        className="font-semibold text-neutral-900 dark:text-neutral-100"
+        data-testid="author-name"
+      >
         {displayName}
       </p>
-      <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+      <p
+        className="mt-1 text-sm text-neutral-600 dark:text-neutral-400"
+        data-testid="author-bio"
+      >
         {biography}
       </p>
     </div>
@@ -45,7 +52,10 @@ export function AuthorProfile({ author, displayNameSuffix = '' }: AuthorProfileP
   const fullDisplayName = `${author.name}${displayNameSuffix}`;
 
   return (
-    <div className="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+    <div
+      className="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800"
+      data-testid="author-profile"
+    >
       <div className="flex items-start space-x-4">
         <AuthorAvatar imageUrl={author.avatar} authorName={author.name} />
         <AuthorDetails displayName={fullDisplayName} biography={author.bio} />
