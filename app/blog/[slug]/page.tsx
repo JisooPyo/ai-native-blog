@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { AuthorProfile } from 'app/components/AuthorProfile'
 import { LikeButton } from 'app/components/LikeButton'
+import { SubscribeForm } from 'app/components/SubscribeForm'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 import { siteAuthor } from 'app/lib/author'
@@ -82,7 +83,7 @@ export default function Blog({ params }) {
               '@type': 'Person',
               name: siteAuthor.name,
             },
-          }),
+          }).replace(/</g, '\\u003c'),
         }}
       />
       <h1 className="title font-semibold text-2xl tracking-tighter">
@@ -100,6 +101,7 @@ export default function Blog({ params }) {
         <LikeButton slug={post.slug} />
       </div>
       <AuthorProfile author={siteAuthor} />
+      <SubscribeForm />
     </section>
   )
 }
