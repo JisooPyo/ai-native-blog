@@ -4,6 +4,7 @@ exports[`AuthorProfile snapshot testing matches snapshot with all props 1`] = `
 <div>
   <div
     class="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800"
+    data-testid="author-profile"
   >
     <div
       class="flex items-start space-x-4"
@@ -11,6 +12,7 @@ exports[`AuthorProfile snapshot testing matches snapshot with all props 1`] = `
       <img
         alt="Jisoo Pyo"
         class="rounded-full"
+        data-testid="author-avatar"
         height="64"
         src="https://api.dicebear.com/7.x/initials/svg?seed=JP"
         width="64"
@@ -20,11 +22,13 @@ exports[`AuthorProfile snapshot testing matches snapshot with all props 1`] = `
       >
         <p
           class="font-semibold text-neutral-900 dark:text-neutral-100"
+          data-testid="author-name"
         >
           Jisoo Pyo Sir
         </p>
         <p
           class="mt-1 text-sm text-neutral-600 dark:text-neutral-400"
+          data-testid="author-bio"
         >
           일단 시작.
         </p>
@@ -38,6 +42,7 @@ exports[`AuthorProfile snapshot testing matches snapshot with different author d
 <div>
   <div
     class="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800"
+    data-testid="author-profile"
   >
     <div
       class="flex items-start space-x-4"
@@ -45,6 +50,7 @@ exports[`AuthorProfile snapshot testing matches snapshot with different author d
       <img
         alt="John Smith"
         class="rounded-full"
+        data-testid="author-avatar"
         height="64"
         src="https://different-avatar.com/image.png"
         width="64"
@@ -54,11 +60,13 @@ exports[`AuthorProfile snapshot testing matches snapshot with different author d
       >
         <p
           class="font-semibold text-neutral-900 dark:text-neutral-100"
+          data-testid="author-name"
         >
           John Smith, PhD
         </p>
         <p
           class="mt-1 text-sm text-neutral-600 dark:text-neutral-400"
+          data-testid="author-bio"
         >
           Full-stack developer with passion for open source
         </p>
@@ -72,6 +80,7 @@ exports[`AuthorProfile snapshot testing matches snapshot with required props onl
 <div>
   <div
     class="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800"
+    data-testid="author-profile"
   >
     <div
       class="flex items-start space-x-4"
@@ -79,6 +88,7 @@ exports[`AuthorProfile snapshot testing matches snapshot with required props onl
       <img
         alt="Jisoo Pyo"
         class="rounded-full"
+        data-testid="author-avatar"
         height="64"
         src="https://api.dicebear.com/7.x/initials/svg?seed=JP"
         width="64"
@@ -88,11 +98,13 @@ exports[`AuthorProfile snapshot testing matches snapshot with required props onl
       >
         <p
           class="font-semibold text-neutral-900 dark:text-neutral-100"
+          data-testid="author-name"
         >
           Jisoo Pyo
         </p>
         <p
           class="mt-1 text-sm text-neutral-600 dark:text-neutral-400"
+          data-testid="author-bio"
         >
           일단 시작.
         </p>
