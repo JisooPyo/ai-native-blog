@@ -4,7 +4,7 @@ export default function AnimatedHero() {
   return (
     <div className="animated-hero">
       {/* Floating shapes */}
-      <div className="hero-shapes">
+      <div className="hero-shapes" aria-hidden="true">
         <div className="shape shape-circle" />
         <div className="shape shape-ring" />
         <div className="shape shape-square" />

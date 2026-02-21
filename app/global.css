@@ -424,7 +424,6 @@ table {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient-shift 6s ease infinite;
 }
 
 .hero-tagline {
@@ -452,4 +451,14 @@ table {
 
 .dark .hero-line {
   background: linear-gradient(90deg, #60a5fa, #a78bfa, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-hero * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .hero-line {
+    width: 80px;
+  }
 }
