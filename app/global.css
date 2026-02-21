@@ -232,3 +232,224 @@ table {
 .title {
   text-wrap: balance;
 }
+
+/* ===== Animated Hero ===== */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-120px) rotate(180deg); opacity: 0; }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.2; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+@keyframes slide-in-left {
+  0% { transform: translateX(-40px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes expand-line {
+  0% { width: 0; }
+  100% { width: 80px; }
+}
+
+@keyframes typewriter-blink {
+  0%, 100% { border-right-color: transparent; }
+  50% { border-right-color: currentColor; }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animated-hero {
+  position: relative;
+  padding: 3rem 0 2rem;
+  overflow: hidden;
+}
+
+.hero-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shape-circle {
+  width: 180px;
+  height: 180px;
+  right: -40px;
+  top: -30px;
+  background: linear-gradient(135deg, #47a3f3 0%, #a855f7 100%);
+  opacity: 0.10;
+  animation: pulse-ring 4s ease-in-out infinite;
+}
+
+.dark .shape-circle {
+  opacity: 0.08;
+}
+
+.shape-ring {
+  width: 100px;
+  height: 100px;
+  right: 20px;
+  top: 10px;
+  border: 2px solid #47a3f3;
+  opacity: 0.15;
+  animation: orbit 12s linear infinite;
+}
+
+.dark .shape-ring {
+  border-color: #60a5fa;
+  opacity: 0.12;
+}
+
+.shape-square {
+  width: 40px;
+  height: 40px;
+  left: -10px;
+  bottom: 20px;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #f97316, #ef4444);
+  opacity: 0.12;
+  animation: spin-slow 20s linear infinite;
+}
+
+.dark .shape-square {
+  opacity: 0.08;
+}
+
+.shape-dot {
+  width: 6px;
+  height: 6px;
+  background: #47a3f3;
+  opacity: 0;
+  animation: float-up 3s ease-in-out infinite;
+}
+
+.dot-1 {
+  left: 20%;
+  bottom: 0;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  left: 50%;
+  bottom: 0;
+  animation-delay: 1s;
+}
+
+.dot-3 {
+  left: 75%;
+  bottom: 0;
+  animation-delay: 2s;
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 26px solid #a855f7;
+  border-radius: 0;
+  right: 50px;
+  bottom: 30px;
+  opacity: 0.10;
+  animation: spin-slow 15s linear infinite reverse;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-greeting {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  animation: slide-in-left 0.6s ease-out both;
+}
+
+.dark .hero-greeting {
+  color: #9ca3af;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  animation: fade-in-up 0.7s ease-out 0.2s both;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #2563eb, #7c3aed, #db2777, #ea580c, #2563eb);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6, #fb923c, #60a5fa);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.hero-tagline {
+  animation: fade-in-up 0.7s ease-out 0.4s both;
+}
+
+.typewriter {
+  font-size: 1rem;
+  color: #4b5563;
+  border-right: 2px solid currentColor;
+  padding-right: 4px;
+  animation: typewriter-blink 1s step-end infinite;
+}
+
+.dark .typewriter {
+  color: #9ca3af;
+}
+
+.hero-line {
+  height: 2px;
+  margin-top: 1.5rem;
+  background: linear-gradient(90deg, #2563eb, #7c3aed, transparent);
+  animation: expand-line 1s ease-out 0.8s both;
+}
+
+.dark .hero-line {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, transparent);
+}
