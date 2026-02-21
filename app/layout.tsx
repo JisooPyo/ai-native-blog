@@ -52,7 +52,22 @@ export default function RootLayout({
         GeistSans.variable,
         GeistMono.variable
       )}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
         <ThemeProvider>
           <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
